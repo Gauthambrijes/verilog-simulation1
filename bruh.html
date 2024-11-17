@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verilog Design & Simulation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        header {
+            background-color: #1e2a47; /* Navy Blue */
+            padding: 15px;
+            text-align: center;
+            color: white;
+        }
+        h1 {
+            font-size: 24px;
+            margin: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        select, input, button {
+            padding: 10px;
+            margin: 10px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            width: 100%;
+            font-size: 16px;
+        }
+        select {
+            width: auto;
+            background-color: #1e2a47; /* Navy Blue */
+            color: white;
+        }
+        button {
+            background-color: #7b4e9d; /* Purple */
+            color: white;
+            cursor: pointer;
+            border: none;
+        }
+        button:hover {
+            background-color: #6a3e8b; /* Darker Purple */
+        }
+        .output-section {
+            margin-top: 20px;
+        }
+        #output, #verilogCode {
+            width: 100%;
+            height: 200px;
+            padding: 15px;
+            margin-top: 10px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            background-color: #f4f4f9;
+            font-family: monospace;
+            overflow-y: scroll;
+        }
+        #verilogCode {
+            background-color: #e5e5f3;
+        }
+        .inputs label {
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .inputs input {
+            width: calc(100% - 22px);
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        footer {
+            background-color: #1e2a47; /* Navy Blue */
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Verilog Design & Simulation Tool</h1>
+</header>
+
+<div class="container">
+    <div class="inputs">
+        <label for="questionSelect">Select a Question:</label>
+        <select id="questionSelect" onchange="setupInputs()">
+            <option value="">--Select--</option>
+            <option value="q1">FSM Sequence Detector</option>
+            <option value="q2">Traffic Light Controller</option>
+            <option value="q3">Voting Machine</option>
+            <option value="q4">24-hour Digital Clock</option>
+            <option value="q5">Calculator</option>
+            <option value="q6">Parity Generator</option>
+            <option value="q7">Serial Adder</option>
+            <option value="q8">Comparator</option>
+        </select>
+    </div>
+
+    <div class="inputs" id="inputs">
+        <!-- Inputs will be dynamically added here -->
+    </div>
+
+    <button onclick="runQuestion()">Run Simulation</button>
+
+    <div class="output-section">
+        <h3>Solution Output</h3>
+        <textarea id="output" readonly></textarea>
+    </div>
+
+    <div class="output-section">
+        <h3>Verilog Code</h3>
+        <textarea id="verilogCode" readonly></textarea>
+    </div>
+</div>
+
+<footer>
+    <p>© 2024 Verilog Design Tools. All Rights Reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
